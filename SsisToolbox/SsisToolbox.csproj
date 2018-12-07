@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1F3AE014-2DAD-4B76-940F-999B8F83DA2D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SsisToolbox</RootNamespace>
+    <AssemblyName>SsisToolbox</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Excel\Mapper\Attributes\MapExcelAttribute.cs" />
+    <Compile Include="Excel\Mapper\ExcelMapper.cs" />
+    <Compile Include="Interface\ICircuitBreaker.cs" />
+    <Compile Include="Interface\IDts.cs" />
+    <Compile Include="Logging\BaseDts.cs" />
+    <Compile Include="Logging\ConsoleDtsAdapter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reliability\CircuitBreaker.cs" />
+    <Compile Include="Reliability\CircuitBreakerFactory.cs" />
+    <Compile Include="Reliability\DebugCircuitBreaker.cs" />
+    <Compile Include="Reliability\TempFile.cs" />
+    <Compile Include="Sql\ConnectionFactory.cs" />
+    <Compile Include="Sql\GenericRepository\Attributes\ColumnAttribute.cs" />
+    <Compile Include="Sql\GenericRepository\Attributes\IdAttribute.cs" />
+    <Compile Include="Sql\GenericRepository\Attributes\TableAttribute.cs" />
+    <Compile Include="Sql\GenericRepository\Attributes\TimestampAttribute.cs" />
+    <Compile Include="Sql\GenericRepository\SqlGenericRepository.cs" />
+    <Compile Include="Sql\Mapper\Attributes\MapSqlTableAttribute.cs" />
+    <Compile Include="Sql\Mapper\SqlMapper.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
